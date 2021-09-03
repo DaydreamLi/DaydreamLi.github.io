@@ -5,19 +5,22 @@ set -e
 npm run build
 
 # 进入输出产物文件夹
-# cd dist
+cd dist
 
 # 如果你要部署到自定义域名
 # echo 'www.example.com' > CNAME
 
-# git init
-# git add -A
-# git commit -m 'deploy'
+git init
+git checkout --orphan gh-pages
+git add --all
+git commit -m 'deploy'
+
+git remote add origin https://github.com/DaydreamLi/DaydreamLi.github.io.git
 
 # 如果你要部署在 https://<USERNAME>.github.io
-# git push origin page
+git push origin gh-pages
 
 # 如果你要部署在 https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:Wang9977/viteProject.git master:gh-pages
+# git push -f ** master:gh-pages
 
 cd -
